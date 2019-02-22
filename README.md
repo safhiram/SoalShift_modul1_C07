@@ -43,6 +43,40 @@ awk -F ',' '{if($4=="Mountaineering Equipment") iter[$6]+=$10} END {for(hasil in
 <h4>d.	Password yang dihasilkan tidak boleh sama.</h4>
 <br>
 
+```
+#!/bin/bash
+
+name="password"
+
+while [ 0 ]; do
+num=1
+cek=0
+
+pass=$(cat /dev/urandom | tr -dc A-Za-z0-9 | head -c 12)
+```
+```
+while test -e "$name$num.txt"; do
+        if [ pass != $(echo $name$num.txt) ]; then
+
+        echo $pass
+        ((num++))
+        else
+        cek=1
+        break
+        fi
+done
+```
+```
+if [ $cek  ]; then
+        echo $num $pass
+        namafile="$name$num.txt"
+        echo $pass > $namafile
+        break
+        fi
+done
+```
+
+<h5>Penjelasan:</h5>
 
 
 <h4>4.	Lakukan backup file syslog setiap jam dengan format nama file “jam:menit tanggal-bulan-tahun”. Isi dari file backup terenkripsi dengan konversi huruf (string manipulation) yang disesuaikan dengan jam dilakukannya backup misalkan sebagai berikut:</h4>
@@ -52,6 +86,8 @@ awk -F ',' '{if($4=="Mountaineering Equipment") iter[$6]+=$10} END {for(hasil in
 <h4>d.	Backup file syslog setiap jam.</h4>
 <h4>e.	dan buatkan juga bash script untuk dekripsinya.
 </h4>
+
+
 
 <h4>Isi dari file syslog</h4>
 <img src="4.4.PNG">
