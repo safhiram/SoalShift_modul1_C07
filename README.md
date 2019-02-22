@@ -77,6 +77,17 @@ done
 ```
 
 <h5>Penjelasan:</h5>
+<p>1. Pertama buat variabel name dan num, sebagai nama file yang akan kita buat, yaitu namenum.txt
+</p>
+<p>2. buat sebuah password acak dengan perintah</p>
+```
+pass=$(cat /dev/urandom | tr -dc A-Za-z0-9 | head -c 12)
+```
+<p>3. cek apakah file dengan nama password yang kita inginkan sudah ada atau belum, jika sudah ada num++</p>
+<p>4. jika belum ada, buat file dengan nama $name$num.txt dengan name = "password" </p>
+<p>5. echo num dan pass y</p>
+<p>6. password yang sudah kita buat dimasukan ke file </p>
+
 
 
 <h4>4.	Lakukan backup file syslog setiap jam dengan format nama file “jam:menit tanggal-bulan-tahun”. Isi dari file backup terenkripsi dengan konversi huruf (string manipulation) yang disesuaikan dengan jam dilakukannya backup misalkan sebagai berikut:</h4>
