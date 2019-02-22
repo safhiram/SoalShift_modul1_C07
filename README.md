@@ -197,3 +197,26 @@ cat "$1" | tr "${up:0:26}" "${up:rot:26}" | tr "${low:0:26}" "${low:rot:26}" > "
 <h4>b.	Jumlah field (number of field) pada baris tersebut berjumlah kurang dari 13.</h4>
 <h4>c.	Masukkan record tadi ke dalam file logs yang berada pada direktori /home/[user]/modul1.</h4>
 <h4>d.	Jalankan script tadi setiap 6 menit dari menit ke 2 hingga 30, contoh 13:02, 13:08, 13:14, dst.</h4>
+
+<h3> script :</h3>
+
+```
+
+#!/bin/bash
+
+awk '((/[cC][rR][oO][nN]/)&& !(/[[sS][uU][dD[oO]) && (NF<13))' /var/log/syslog >> /home/imanafandy/modul1
+```
+<h3> penjelasan</h3>
+<p>1. Ambil file syslog dengan ketentuan yang di inginkan </p>
+   ```
+   awk '((/[cC][rR][oO][nN]/)&& !(/[[sS][uU][dD[oO]) && (NF<13))'
+   ```
+<p>2. contohnya itu membuat dia akan menerima Akan menyertakan 'cRoN' tetapi tidak mengandung 'SuDO' </p>
+<p>3. masukan file yang disimpan ke ~/modul1</p>
+<p>4. buat crontabnya 
+  
+  ```
+   2-30/6 * * * *
+   
+   ```
+<p>"setiap 6 menit dari menit ke 2 hingga 30"</p>
