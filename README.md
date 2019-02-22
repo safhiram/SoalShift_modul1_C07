@@ -44,6 +44,12 @@ awk -F ',' '{if($4=="Mountaineering Equipment") iter[$6]+=$10} END {for(hasil in
 <h4>e.	dan buatkan juga bash script untuk dekripsinya.
 </h4>
 
+<h4>Isi dari file syslog</h4>
+<img src="4.4.PNG">
+<h4>Isi dari file jam:menit tanggal-bulan-tahun</h4>
+<img src="4.2.PNG">
+<img src="4.3.PNG">
+
 ```
 #!/bin/bash
 
