@@ -187,3 +187,9 @@ cat "$1" | tr "${up:0:26}" "${up:rot:26}" | tr "${low:0:26}" "${low:rot:26}" > "
 <p>5. rot. Variabel ini menyimpan 26 dikurangi dengan huruf yang ada di input sislol</p>
 
 <p>diambil data dari variabel sislol lalu di translate (tr) sebanyak nilai dari variabel minus hour , lalu jawaban tersebut disimpan di file</p>
+
+<h4>5.	Buatlah sebuah script bash untuk menyimpan record dalam syslog yang memenuhi kriteria berikut:</h4>
+<h4>a.	Tidak mengandung string “sudo”, tetapi mengandung string “cron”, serta buatlah pencarian stringnya tidak bersifat case sensitive, sehingga huruf kapital atau tidak, tidak menjadi masalah.</h4>
+<h4>b.	Jumlah field (number of field) pada baris tersebut berjumlah kurang dari 13.</h4>
+<h4>c.	Masukkan record tadi ke dalam file logs yang berada pada direktori /home/[user]/modul1.</h4>
+<h4>d.	Jalankan script tadi setiap 6 menit dari menit ke 2 hingga 30, contoh 13:02, 13:08, 13:14, dst.</h4>
