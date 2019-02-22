@@ -1,24 +1,22 @@
 <h4>2.	Anda merupakan pegawai magang pada sebuah perusahaan retail, dan anda diminta untuk memberikan laporan berdasarkan file WA_Sales_Products_2012-14.csv. Laporan yang diminta berupa:</h4>
 <h4>a.	Tentukan negara dengan penjualan(quantity) terbanyak pada tahun 2012.</h4>
-<h4>b.	Tentukan tiga product line yang memberikan penjualan(quantity) terbanyak pada soal poin a.</h4>
-<h4>c.	Tentukan tiga product yang memberikan penjualan(quantity) terbanyak berdasarkan tiga product line yang didapatkan pada soal poin b.</h4>
-
-<p>2a.</p>
 
 ```
 var=$(awk -F "," '/,2012,/{a[$1]+=$10}END{for(i in a) print a[i],i}' WA_Sales_Products_2012-14.csv | sort -rn | awk 'NR==1 {print $2,$3}')
 echo "$var" 
 ```
-
 <h4>Penjelasan:</h4>
 <p>Pada data yang ada di file WA_Sales_Products_2012-14.csv di pisahkan menggunakan tanda koma dengan menggunakan -F, Dari data tersebut diambil data dengan tahun 2012. Lalu data tersebut dikelompokkan berdasarkan kolom ke 1 , yang dikelompokkan adalah kolom ke-10(quantity). Lalu hasil disimpan di variabel i(isinya kolom ke satu), lalu di print quantity nya dan retailer country nya. Data tersebut di sort dan diambil baris pertama saja dan yang di print hanya kolom ke 2 dan 3. Quantity tidak di print.</p>
 
-<p>2b.</p>
-<p style="color:blue;">
-varb=$(awk -v country="$var" 'BEGIN {FS = ",";OFS=FS} $0 ~ country {iter[$4]+=$10} END{for(hasil in iter){print hasil,iter[hasil]}}' WA_Sales_Products_2012-14.csv | sort -nrk2 -t, | head -3 | awk 'BEGIN{FS=","} {print $1}') </p>
+<h4>b.	Tentukan tiga product line yang memberikan penjualan(quantity) terbanyak pada soal poin a.</h4>
+```
+varb=$(awk -v country="$var" 'BEGIN {FS = ",";OFS=FS} $0 ~ country {iter[$4]+=$10} END{for(hasil in iter){print hasil,iter[hasil]}}' WA_Sales_Products_2012-14.csv | sort -nrk2 -t, | head -3 | awk 'BEGIN{FS=","} {print $1}') 
+```
 
 <h4>Penjelasan:</h4>
 <p>Pada data yang ada di file WA_Sales_Products_2012-14.csv di pisahkan menggunakan tanda koma dengan menggunakan -F. Dari data tersebut diambil data dengan tahun 2012 dan berasal dari negara United States. Lalu data tersebut dikelompokkan berdasarkan kolom ke 4 , yang dikelompokkan adalah kolom ke 10(quantity). Lalu p ditaruh ke variabel result dan selanjutnya di print. Data tersebut di sort dan diambil tiga baris teratas, dan di print kolom ke 1.</p>
+
+<h4>c.	Tentukan tiga product yang memberikan penjualan(quantity) terbanyak berdasarkan tiga product line yang didapatkan pada soal poin b.</h4>
 
 <p>2c.</p>
 <p style="color:blue;">
