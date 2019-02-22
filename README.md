@@ -59,14 +59,14 @@ cat $sislol | tr [${low:26}${up:26}] [${low:$hour:26}${up:$hour:26}] > "/home/sa
 
 <h4>Penjelasan:</h4>
 <p>
-Terdapat variabel
-1. hour. Variabel ini berfungsi untuk menyimpan nilai jam pada saat ini
-2. dat. Variabel ini berfungsi untuk menyimpan nilai jam:menit tanggal-bulan-tahun
-3. sislol. Variabel ini berfungsi untuk menyimpan data dari file syslol
-4. low. Variabel ini menyimpan huruf dari a sampai z, lalu kembali lagi dari a sampai z
-5. up. Variabel ini menyimpan huruf kapital dari A sampai Z
+Terdapat variabel</p>
+<p>1. hour. Variabel ini berfungsi untuk menyimpan nilai jam pada saat ini </p>
+<p>2. dat. Variabel ini berfungsi untuk menyimpan nilai jam:menit tanggal-bulan-tahun </p>
+<p>3. sislol. Variabel ini berfungsi untuk menyimpan data dari file syslol </p>
+<p>4. low. Variabel ini menyimpan huruf dari a sampai z, lalu kembali lagi dari a sampai z </p>
+<p>5. up. Variabel ini menyimpan huruf kapital dari A sampai Z </p>
 
-diambil data dari variabel sislol lalu di translate (tr) sebanyak nilai dari variabel hour , lalu jawaban tersebut disimpan di file <p>
+<p>diambil data dari variabel sislol lalu di translate (tr) sebanyak nilai dari variabel hour , lalu jawaban tersebut disimpan di file </p>
 
 --deskripsi
 #!/bin/bash
