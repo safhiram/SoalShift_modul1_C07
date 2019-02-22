@@ -80,8 +80,10 @@ done
 <p>1. Pertama buat variabel name dan num, sebagai nama file yang akan kita buat, yaitu namenum.txt
 </p>
 <p>2. buat sebuah password acak dengan perintah</p>
+
 ```
 pass=$(cat /dev/urandom | tr -dc A-Za-z0-9 | head -c 12)
+
 ```
 <p>3. cek apakah file dengan nama password yang kita inginkan sudah ada atau belum, jika sudah ada num++</p>
 <p>4. jika belum ada, buat file dengan nama $name$num.txt dengan name = "password" </p>
