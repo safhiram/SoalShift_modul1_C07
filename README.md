@@ -169,7 +169,6 @@ Terdapat variabel</p>
 #dat= `date "+%H:%M %d-%m-%Y"`
 hour=$(date +"%H")
 sislol=($(echo "$1"))
-rot=$dat
 low=abcdefghijklmnopqrstuvwxyz
 
 #low=$(ord $log)
