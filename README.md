@@ -4,12 +4,11 @@
 <h4>c.	Tentukan tiga product yang memberikan penjualan(quantity) terbanyak berdasarkan tiga product line yang didapatkan pada soal poin b.</h4>
 
 <p>2a.</p>
-<p>
+
 ```
 var=$(awk -F "," '/,2012,/{a[$1]+=$10}END{for(i in a) print a[i],i}' WA_Sales_Products_2012-14.csv | sort -rn | awk 'NR==1 {print $2,$3}')
 echo "$var" 
 ```
-</p>
 
 <h4>Penjelasan:</h4>
 <p>Pada data yang ada di file WA_Sales_Products_2012-14.csv di pisahkan menggunakan tanda koma dengan menggunakan -F, Dari data tersebut diambil data dengan tahun 2012. Lalu data tersebut dikelompokkan berdasarkan kolom ke 1 , yang dikelompokkan adalah kolom ke-10(quantity). Lalu hasil disimpan di variabel i(isinya kolom ke satu), lalu di print quantity nya dan retailer country nya. Data tersebut di sort dan diambil baris pertama saja dan yang di print hanya kolom ke 2 dan 3. Quantity tidak di print.</p>
