@@ -108,5 +108,6 @@ cat "$1" | tr "${up:0:26}" "${up:rot:26}" | tr "${low:0:26}" "${low:rot:26}" > "
 <p>2. sislol. Variabel ini berfungsi untuk menyimpan data dari file dari input yang dimasukkan</p>
 <p>3. low. Variabel ini menyimpan huruf dari a sampai z, lalu kembali lagi dari a sampai z<p>
 <p>4. up. Variabel ini menyimpan huruf kapital dari A sampai Z</p>
+<p>5. rot. Variabel ini menyimpan 26 dikurangi dengan huruf yang ada di input sislol</p>
 
 <p>diambil data dari variabel sislol lalu di translate (tr) sebanyak nilai dari variabel minus hour , lalu jawaban tersebut disimpan di file</p>
