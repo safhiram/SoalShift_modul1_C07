@@ -200,12 +200,13 @@ cat "$1" | tr "${up:0:26}" "${up:rot:26}" | tr "${low:0:26}" "${low:rot:26}" > "
 
 <h3> script :</h3>
 
-```
 
+```
 #!/bin/bash
 
 awk '((/[cC][rR][oO][nN]/)&& !(/[[sS][uU][dD[oO]) && (NF<13))' /var/log/syslog >> /home/imanafandy/modul1
 ```
+
 <h3> penjelasan</h3>
 <p>1. Ambil file syslog dengan ketentuan yang di inginkan </p>
    ```
