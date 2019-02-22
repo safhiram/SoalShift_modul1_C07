@@ -12,7 +12,11 @@ base64 -d $j | xxd -r  > /root/$i.jpg
 <p>3. Untuk setiap perulangan, decrypt filenya menggunakan base64</p>
 <p>4. reverse hexdump file tersebut karenya file yang dihasilkan masih berupa hexadesimal</p>
 <p>5. File  tersebut direname dari '1' sampai jumlah file di nature.zip </p>
+<p>6. Jika ingin menjadwalkan eksekusi file pada waktu yang diinginkan, buat crontab 
 
+```
+   14 14 14 2 5 /root/soal1.sh
+```
 
 
 
