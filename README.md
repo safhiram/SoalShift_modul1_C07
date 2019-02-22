@@ -41,7 +41,8 @@ awk -F ',' '{if($4=="Mountaineering Equipment") iter[$6]+=$10} END {for(hasil in
 <h4>e.	dan buatkan juga bash script untuk dekripsinya.
 </h4>
 
-<p>#!/bin/bash
+```
+#!/bin/bash
 
 #log=`cat syslog`
 #dat= `date "+%H:%M %d-%m-%Y"`
@@ -58,6 +59,7 @@ low=$low$low
 up=$(echo $low | tr [a-z] [A-Z])
 
 cat $sislol | tr [${low:26}${up:26}] [${low:$hour:26}${up:$hour:26}] > "/home/safhiram/Sisop/$dat"<p>
+```
 
 <h4>Penjelasan:</h4>
 <p>
@@ -70,6 +72,7 @@ Terdapat variabel</p>
 
 <p>diambil data dari variabel sislol lalu di translate (tr) sebanyak nilai dari variabel hour , lalu jawaban tersebut disimpan di file </p>
 
+```
 --deskripsi
 #!/bin/bash
 
@@ -89,11 +92,12 @@ up=$(echo $low | tr [a-z] [A-Z])
 rot=$((26-${sislol[0]}))
 
 cat "$1" | tr "${up:0:26}" "${up:rot:26}" | tr "${low:0:26}" "${low:rot:26}" > "$1-balik"
+```
+<h4>Penjelasan:</h4>
+<p>Terdapat variabel</p>
+<p>1. hour. Variabel ini berfungsi untuk menyimpan nilai jam pada saat ini</p>
+<p>2. sislol. Variabel ini berfungsi untuk menyimpan data dari file dari input yang dimasukkan</p>
+<p>3. low. Variabel ini menyimpan huruf dari a sampai z, lalu kembali lagi dari a sampai z<p>
+<p>4. up. Variabel ini menyimpan huruf kapital dari A sampai Z</p>
 
-Terdapat variabel
-1. hour. Variabel ini berfungsi untuk menyimpan nilai jam pada saat ini
-2. sislol. Variabel ini berfungsi untuk menyimpan data dari file dari input yang dimasukkan
-3. low. Variabel ini menyimpan huruf dari a sampai z, lalu kembali lagi dari a sampai z
-4. up. Variabel ini menyimpan huruf kapital dari A sampai Z
-
-diambil data dari variabel sislol lalu di translate (tr) sebanyak nilai dari variabel minus hour , lalu jawaban tersebut disimpan di file
+<p>diambil data dari variabel sislol lalu di translate (tr) sebanyak nilai dari variabel minus hour , lalu jawaban tersebut disimpan di file</p>
