@@ -36,6 +36,15 @@ awk -F ',' '{if($4=="Mountaineering Equipment") iter[$6]+=$10} END {for(hasil in
 <h4>Hasil:</h4>
 <img src="2.PNG">
 
+<h4> 3.	Buatlah sebuah script bash yang dapat menghasilkan password secara acak sebanyak 12 karakter yang terdapat huruf besar, huruf kecil, dan angka. Password acak tersebut disimpan pada file berekstensi .txt dengan ketentuan pemberian nama sebagai berikut:</h4>
+<h4>a.	Jika tidak ditemukan file password1.txt maka password acak tersebut disimpan pada file bernama password1.txt</h4>
+<h4>b.	Jika file password1.txt sudah ada maka password acak baru akan disimpan pada file bernama password2.txt dan begitu seterusnya.</h4>
+<h4>c.	Urutan nama file tidak boleh ada yang terlewatkan meski filenya dihapus.</h4>
+<h4>d.	Password yang dihasilkan tidak boleh sama.</h4>
+<br>
+
+
+
 <h4>4.	Lakukan backup file syslog setiap jam dengan format nama file “jam:menit tanggal-bulan-tahun”. Isi dari file backup terenkripsi dengan konversi huruf (string manipulation) yang disesuaikan dengan jam dilakukannya backup misalkan sebagai berikut:</h4>
 <h4>a.	Huruf b adalah alfabet kedua, sedangkan saat ini waktu menunjukkan pukul 12, sehingga huruf b diganti dengan huruf alfabet yang memiliki urutan ke 12+2 = 14.</h4>
 <h4>b.	Hasilnya huruf b menjadi huruf n karena huruf n adalah huruf ke empat belas, dan seterusnya. </h4>
