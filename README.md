@@ -28,6 +28,7 @@ awk -F ',' '{if($4=="Outdoor Protection") iter[$6]+=$10} END {for(hasil in iter)
 echo "==Mountaineering Equipment=="
 awk -F ',' '{if($4=="Mountaineering Equipment") iter[$6]+=$10} END {for(hasil in iter) {print iter[hasil],hasil}}' WA_Sales_Products_2012-14.csv  | sort -nr | awk 'NR<=3 {print $2,$3,$4}'
 ```
+
 <h4>Penjelasan:</h4>
 <p>Pada line 2 , Saat kolom ke-4(Product Line) adalah Personal Accessories atau Outdoor Protection atau Mountaineering Equipment maka Lalu data tersbut dikelompokkan berdasarkan kolom ke-6(product), yang dikelompokkan adalah kolom ke-10(quantity). Lalu hasil product yang telah dikelompokkan dimasukkan dalam variabel hasil lalu diprint quantity dan productnya. Dari data tersebut di sore dan diambil data 3 teratas</p>
 
