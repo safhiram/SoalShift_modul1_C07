@@ -1,6 +1,17 @@
 <h4>1.	Anda diminta tolong oleh teman anda untuk mengembalikan filenya yang telah dienkripsi oleh seseorang menggunakan bash script, file yang dimaksud adalah nature.zip. Karena terlalu mudah kalian memberikan syarat akan membuka seluruh file tersebut jika pukul 14:14 pada tanggal 14 Februari atau hari tersebut adalah hari jumat pada bulan Februari.
 Hint: Base64, Hexdump</h4>
 
+<a href="https://github.com/safhiram/SoalShift_modul1_C07/blob/master/soal1.sh">Lihat shell script</a>
+<h5>penjelasan :</h5>
+<p>1. file nature.zip yang ada dalam direktori di unzip terlebih dahulu</p>
+<p>2. setelah itu lakukan perulangan for untuk setiap file yang telah di unzip dari nature.zip</p>
+
+```
+base64 -d $j | xxd -r  > /root/$i.jpg
+```
+<p>3. Untuk setiap perulangan, decrypt filenya menggunakan base64</p>
+<p>4. reverse hexdump file tersebut karenya file yang dihasilkan masih berupa hexadesimal</p>
+<p>5. File  tersebut direname dari '1' sampai jumlah file di nature.zip </p>
 
 
 
