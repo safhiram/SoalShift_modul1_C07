@@ -1,10 +1,10 @@
 #!/bin/bash
 
-unzip  /root/nature.zip  
+
 
 i=0
-for j in /root/*.jpg
+for j in /~/nature/*.jpg
 do
-	base64 -d $j | xxd -r  > /root/$i.jpg
+	base64 -d $j | xxd -r  > $i.jpg
 	i=$(($i+1))
 done
