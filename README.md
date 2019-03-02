@@ -15,7 +15,7 @@ base64 -d $j | xxd -r  > /root/$i.jpg
 <p>6. Jika ingin menjadwalkan eksekusi file pada waktu yang diinginkan, buat crontab 
 
 ```
-   14 14 14 2 5 /root/soal1.sh
+   14 14 14 2 5 /bin/bash /home/safhiram/sisop/soal1.sh
 ```
 
 
@@ -46,10 +46,8 @@ awk -F ',' '{if($7=='2012' && $1=="United States" && ($4=="Personal Accessories"
 ```
 
 <h4>Penjelasan:</h4>
-<p>Pada line 2 , Saat kolom ke-4(Product Line) adalah Personal Accessories atau Outdoor Protection atau Mountaineering Equipment maka Lalu data tersbut dikelompokkan berdasarkan kolom ke-6(product), yang dikelompokkan adalah kolom ke-10(quantity). Lalu hasil product yang telah dikelompokkan dimasukkan dalam variabel hasil lalu diprint quantity dan productnya. Dari data tersebut di sore dan diambil data 3 teratas</p>
+<p>Pada line 2 , Saat kolom ke-4(Product Line) adalah Personal Accessories dan Outdoor Protection dan Mountaineering Equipment maka Lalu data tersbut dikelompokkan berdasarkan kolom ke-6(product), yang dikelompokkan adalah kolom ke-10(quantity). Lalu hasil product yang telah dikelompokkan dimasukkan dalam variabel hasil lalu diprint quantity dan productnya. Dari data tersebut di sore dan diambil data 3 teratas</p>
 
-<h4>Hasil:</h4>
-<img src="2.PNG">
 
 <h4> 3.	Buatlah sebuah script bash yang dapat menghasilkan password secara acak sebanyak 12 karakter yang terdapat huruf besar, huruf kecil, dan angka. Password acak tersebut disimpan pada file berekstensi .txt dengan ketentuan pemberian nama sebagai berikut:</h4>
 <h4>a.	Jika tidak ditemukan file password1.txt maka password acak tersebut disimpan pada file bernama password1.txt</h4>
@@ -155,24 +153,27 @@ Terdapat variabel</p>
 <p>diambil data dari variabel sislol lalu di translate (tr) sebanyak nilai dari variabel hour , lalu jawaban tersebut disimpan di file </p>
 
 ```
---deskripsi
+--dekripsi
 #!/bin/bash
 
 #log=`cat syslog`
 #dat= `date "+%H:%M %d-%m-%Y"`
-hour=$(date +"%H")
-sislol=($(echo "$1"))
+
+read id
+#hour=$(date +"%H")
+#echo "$hour"
+#sislol=($(echo "$1"))
+#echo "$sislol"
 low=abcdefghijklmnopqrstuvwxyz
 
-#low=$(ord $log)
 low=$low$low
 
 #up=$(ord &log)
 up=$(echo $low | tr [a-z] [A-Z])
 
-rot=$((26-${sislol[0]}))
+#rot=$((26-${sislol[0]}))
 
-cat "$1" | tr "${up:0:26}" "${up:rot:26}" | tr "${low:0:26}" "${low:rot:26}" > "$1-balik"
+cat "$1" | tr "${up:id:26}" "${up:0:26}" | tr "${low:id:26}" "${low:0:26}" > "$1-balik"
 ```
 <h4>Penjelasan:</h4>
 <p>Terdapat variabel</p>
@@ -183,6 +184,11 @@ cat "$1" | tr "${up:0:26}" "${up:rot:26}" | tr "${low:0:26}" "${low:rot:26}" > "
 <p>5. rot. Variabel ini menyimpan 26 dikurangi dengan huruf yang ada di input sislol</p>
 
 <p>diambil data dari variabel sislol lalu di translate (tr) sebanyak nilai dari variabel minus hour , lalu jawaban tersebut disimpan di file</p>
+
+<h4>Crontab</h4>
+```
+@hourly /bin/bash /home/safhiram/sisop/soal4.sh
+```
 
 <h4>5.	Buatlah sebuah script bash untuk menyimpan record dalam syslog yang memenuhi kriteria berikut:</h4>
 <h4>a.	Tidak mengandung string “sudo”, tetapi mengandung string “cron”, serta buatlah pencarian stringnya tidak bersifat case sensitive, sehingga huruf kapital atau tidak, tidak menjadi masalah.</h4>
@@ -209,7 +215,7 @@ awk '((/[cC][rR][oO][nN]/)&& !(/[[sS][uU][dD[oO]) && (NF<13))' /var/log/syslog >
 <p>4. buat crontabnya 
   
   ```
-   2-30/6 * * * *
+   2-30/6 * * * * /bin/bash /home/safhiram/sisop/soal5.sh
    
    ```
 <p>"setiap 6 menit dari menit ke 2 hingga 30"</p>
